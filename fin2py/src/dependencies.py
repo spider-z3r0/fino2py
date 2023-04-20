@@ -10,3 +10,4 @@ possible future dependencies:
 
 import pathlib as pl
 import pandas as pd
+from typing import Union, Tuple, Optional

@@ -1,0 +1,5 @@
+site_name: fino2py
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs

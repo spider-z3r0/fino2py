@@ -1,17 +1,26 @@
 
 from .dependencies import pd
 
-def convert_time(time):
-    '''This function converts the time stamps in the timesheets to datetime objects suitable for the other functions in this module
-    Parameters
-    ----------
+def convert_time(time: str) -> str:
+    '''
+    This function converts the time stamps in the timesheets to datetime objects suitable for the other functions in this module.
+
+    Parameters:
+    -----------
     time : str
         The time stamp in the timesheets
-    Returns
-    -------
-    datetime.datetime
-        The time stamp converted to a datetime object
+
+    Returns:
+    --------
+    str:
+        The time stamp converted to a string format of '%H:%M:%S.%f' with microseconds removed.
     '''
-    time = pd.to_datetime(time)
-    time = time.strftime('%H:%M:%S.%f')[:-3]
-    return time
+
+    try:
+        time = pd.to_datetime(time)
+    except Exception as e:
+        raise ValueError(f"Failed to convert time {time} to datetime object. Error: {e}")
+
+    time_str = time.strftime('%H:%M:%S.%f')[:-3]
+    
+    return time_str

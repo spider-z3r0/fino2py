@@ -3,11 +3,11 @@ These functions takes a dataframe and a time period and returns a dataframe with
 The dataframe must have been created by the read_finometer_interval function.
 The time period must be in the format 'HH:MM:SS'.
 '''
-from .dependencies import pd
+from .dependencies import pd, Union
 from .convert_time import convert_time
 
 
-def create_chunk(df, ID, tag, start, end):
+def create_chunk(df: pd.DataFrame, ID: str, tag: str, start: Union[str, None], end: Union[str, None]) -> pd.DataFrame:
     """
     Create a chunk of data from a dataframe between specified start and end times and return a new dataframe
     containing the mean values for each column in the chunk.
@@ -34,18 +34,17 @@ def create_chunk(df, ID, tag, start, end):
         The output dataframe has a row for the specified participant ID and columns with names that include the
         specified tag.
     """
-    
     # Convert start and end times to datetime objects if they are specified
     if start:
         try:
             start = convert_time(start)
         except:
-            print(f"Could not convert {start} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
+            raise ValueError(f"Could not convert {start} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
     if end:
         try:
             end = convert_time(end)
         except:
-            print(f"Could not convert {end} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
+            raise ValueError(f"Could not convert {end} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
 
     # Extract the chunk of data and compute the mean values for each column
     if start and end:
@@ -60,5 +59,4 @@ def create_chunk(df, ID, tag, start, end):
     chunk.insert(0, 'Participant ID', ID)
 
     return chunk
-
 

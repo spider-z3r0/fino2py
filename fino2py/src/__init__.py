@@ -1,4 +1,4 @@
 '''
-This is the fin2py package for analyzing SmartMedical finometer data.
+This is the fino2py package for analyzing SmartMedical finometer data.
 '''
 

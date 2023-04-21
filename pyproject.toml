@@ -21,3 +21,7 @@ mkdocs = "^1.4.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[build]
+source = "fino2py/src"
+

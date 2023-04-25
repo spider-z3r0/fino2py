@@ -10,4 +10,5 @@ possible future dependencies:
 
 import pathlib as pl
 import pandas as pd
+from functools import reduce
 from typing import Union, Tuple, Optional

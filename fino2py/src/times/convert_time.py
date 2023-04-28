@@ -1,6 +1,8 @@
 
 from .dependencies import pd
 
+
+
 def convert_time(time: str) -> str:
     '''
     This function converts the time stamps in the timesheets to datetime objects suitable for the other functions in this module.
@@ -17,7 +19,7 @@ def convert_time(time: str) -> str:
     '''
 
     try:
-        time = pd.to_datetime(time)
+        time = datetime.strptime(time, '%H:%M:%S.%f')
     except Exception as e:
         raise ValueError(f"Failed to convert time {time} to datetime object. Error: {e}")
 

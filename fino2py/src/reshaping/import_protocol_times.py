@@ -1,12 +1,12 @@
 from .dependencies import pl,pd
 
-def import_protocol_times(times_file_path: pl.Path, add_seconds: bool = False, flatten_seconds: bool = False, save_csv: bool = False) -> pd.DataFrame:
+def import_protocol_times(times_file_path: pl.Path or str, add_seconds: bool = False, flatten_seconds: bool = False, save_csv: bool = False) -> pd.DataFrame:
     '''
     This function imports the protocol times from a .csv or excel file file and returns a cleaned pandas dataframe with the protocol times for each participant.
 
     Parameters
     ----------
-    times_file_path : pathlib.Path
+    times_file_path : pathlib.Path or str
         The path to the .csv file containing the protocol times.
     add_seconds : bool, optional
         If True, seconds will be added to the time values (if missing).

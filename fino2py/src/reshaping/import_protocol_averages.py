@@ -1,4 +1,4 @@
-from .dependencies import pl, pd
+from ..dependencies import pl, pd
 from .create_chunk import create_chunk
 from functools import reduce
 

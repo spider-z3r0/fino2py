@@ -1,4 +1,4 @@
-from .dependencies import pl,pd
+from ..dependencies import pl,pd
 
 def import_protocol_times(times_file_path: pl.Path or str, add_seconds: bool = False, flatten_seconds: bool = False, save_csv: bool = False) -> pd.DataFrame:
     '''

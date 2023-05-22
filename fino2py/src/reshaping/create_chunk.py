@@ -3,8 +3,8 @@ These functions takes a dataframe and a time period and returns a dataframe with
 The dataframe must have been created by the read_finometer_interval function.
 The time period must be in the format 'HH:MM:SS'.
 '''
-from .dependencies import pd, Union
-from .convert_time import convert_time
+from ..dependencies import pd, Union
+from ..times.convert_time import convert_time
 
 
 def create_chunk(df: pd.DataFrame, ID: str, tag: str, start: Union[str, None], end: Union[str, None]) -> pd.DataFrame:

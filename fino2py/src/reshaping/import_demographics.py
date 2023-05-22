@@ -1,5 +1,5 @@
 
-from .dependencies import pd, pl
+from ..dependencies import pd, pl
 
 def import_demographics(folder_path: str) -> pd.DataFrame:
     """

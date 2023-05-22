@@ -1,5 +1,5 @@
 
-from .dependencies import pd
+from ..dependencies import pd
 
 
 

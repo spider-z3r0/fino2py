@@ -7,7 +7,7 @@ def import_protocol_times(times_file_path: pl.Path or str, add_seconds: bool = F
     Parameters
     ----------
     times_file_path : pathlib.Path or str
-        The path to the .csv file containing the protocol times.
+        The path to the .csv/.xlsx file containing the protocol times.
     add_seconds : bool, optional
         If True, seconds will be added to the time values (if missing).
     flatten_seconds : bool, optional
@@ -40,20 +40,24 @@ def import_protocol_times(times_file_path: pl.Path or str, add_seconds: bool = F
     def flatten_seconds(time_str):
         '''This function sets seconds to 00 for a given time string'''
         return time_str[:5] + ':00'
+    
+    supported_extensions = ['.csv', '.xlsx']
 
-    if not isinstance(times_file_path, pl.Path):#check if folder_path is a pathlib.Path object
-        raise TypeError('file_path must be a pathlib.Path object')
-    elif not times_file_path.exists(): #  and if it exists
-        raise ValueError('file_path does not exist')
-    elif not times_file_path.is_file(): #  and is a file 
-        raise ValueError('file_path is not a file')
-    elif times_file_path.suffix != '.csv': #  and is a csv file
-        raise ValueError('file_path is not an csv file')
+    if not isinstance(times_file_path, pl.Path):  # check if file_path is a pathlib.Path object
+        raise TypeError('times_file_path must be a pathlib.Path object')
+    elif not times_file_path.exists():  # and if it exists
+        raise ValueError('times_file_path does not exist')
+    elif not times_file_path.is_file():  # and is a file
+        raise ValueError('times_file_path is not a file')
+    elif times_file_path.suffix not in supported_extensions:  # and is a supported file extension
+        raise ValueError('times_file_path is not a supported file (csv or xlsx)')
     else:
-        df = pd.read_csv(times_file_path, delimiter= ',')
-        df.columns = [col.strip() for col in df.columns]
-        cols_to_keep = ['Participant ID', 'Start of Baseline', 'End of Baseline', 'Start of Task 1', 'End of Task 1', 'Start of Recovery Period', 'End of Recovery Period']
-        df = df[cols_to_keep].applymap(lambda x: str(x).strip('"') if isinstance(x, str) else x)
+        if times_file_path.suffix == '.csv':
+            df = pd.read_csv(times_file_path)
+        elif times_file_path.suffix == '.xlsx':
+            df = pd.read_excel(times_file_path)
+        else:
+            raise ValueError('Invalid file extension')
         
         if add_seconds and flatten_seconds:
             raise ValueError('Only one of add_seconds and flatten_seconds can be True')

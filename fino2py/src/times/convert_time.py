@@ -1,5 +1,5 @@
 
-from ..dependencies import pd
+from ..dependencies import pd, dt
 
 
 
@@ -19,7 +19,7 @@ def convert_time(time: str) -> str:
     '''
 
     try:
-        time = datetime.strptime(time, '%H:%M:%S.%f')
+        time = dt.strptime(time, '%H:%M:%S.%f')
     except Exception as e:
         raise ValueError(f"Failed to convert time {time} to datetime object. Error: {e}")
 

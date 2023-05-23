@@ -1,5 +1,26 @@
-site_name: fino2py
+# mkdocs.yml
+
+site_name: Fino2py
+
+theme:
+  name: "readthedocs"
+
+plugins:
+- mkdocstrings:
+    enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
+    custom_templates: templates
+    default_handler: python
+    handlers:
+      python:
+        options:
+          show_source: false
+
 nav:
-    - Home: index.md
-    - About: about.md
-theme: readthedocs
+  - Fino2py Docs: index.md
+  - tutorials.md
+  - how-to-guides.md
+  - times.md
+  - explanation.md
+
+
+

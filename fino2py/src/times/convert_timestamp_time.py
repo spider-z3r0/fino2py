@@ -1,4 +1,4 @@
-import datetime as dt
+from ..dependencies import dt
 
 def convert_timestamp_time(timestamp_time: str) -> str:
     """

@@ -1,4 +1,4 @@
-from ..dependencies import pd
+from ..dependencies import pd, Tuple
 from .read_raw_finometer_data import read_raw_finometer_data
 from .minute_by_minute import minute_by_minute
 

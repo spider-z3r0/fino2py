@@ -1,4 +1,4 @@
-from ..dependencies import pd
+from ..dependencies import pd, Tuple
 
 def minute_by_minute(df, df_id):
 

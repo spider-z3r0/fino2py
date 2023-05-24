@@ -2,13 +2,13 @@
 The first file is the one that has the header information, so we save that and then append the data from the second file to the bottom of the first file. then rewrite the first 
 file with the header and the appended data.'''
 
-from typing import Optional, List, Union
-from ..dependencies import Path
+
+from ..dependencies import pl, Union, Optional, List
 
 def append_cardio_data(
-    part1_file: Union[str, Path],
-    part2_file: Union[str, Path],
-    output_file: Optional[Union[str, Path]] = None
+    part1_file: Union[str, pl.Path],
+    part2_file: Union[str, pl.Path],
+    output_file: Optional[Union[str, pl.Path]] = None
 ) -> List[str]:
     '''
     Appends cardiovascular data from part 2 file to part 1 file and optionally writes the combined data to an output file.

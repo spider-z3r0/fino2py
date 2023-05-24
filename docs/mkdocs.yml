@@ -1,0 +1,9 @@
+site_name: fino2py
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: pink
+plugins:
+  - search
+  - mkdocstrings

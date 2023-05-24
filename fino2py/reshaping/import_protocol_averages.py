@@ -1,6 +1,6 @@
 from ..dependencies import pl, pd
 from .create_chunk import create_chunk
-from functools import reduce
+
 
 def import_protocol_averages(frame, id, times=None, save_csv=None):
     '''A function that imports the averaged finometer files (which have already been processed from the raw data)

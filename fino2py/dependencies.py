@@ -8,8 +8,8 @@ possible future dependencies:
     - csv
 '''
 
-import pathlib as pl
 import pandas as pd
+import pathlib as pl
 from functools import reduce
-from typing import Union, Tuple, Optional
+from typing import Union, Tuple, Optional, List
 import datetime as dt

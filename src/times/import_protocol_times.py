@@ -7,7 +7,7 @@ def import_protocol_times(times_file_path: pl.Path or str, add_seconds: bool = F
     Parameters
     ----------
     times_file_path : pathlib.Path or str
-        The path to the .csv/.xlsx file containing the protocol times.
+        The path to the .csv/.xlsx  file containing the protocol times.
     add_seconds : bool, optional
         If True, seconds will be added to the time values (if missing).
     flatten_seconds : bool, optional

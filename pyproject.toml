@@ -1,28 +1,18 @@
 [tool.poetry]
 name = "fino2py"
 version = "0.1.0"
-description = "A package to assist researchers and clinitians working with data from the SmartMedical Finometer"
-authors = ["Kevin O'Malley"]
+description = "A package to help researchers and clinicians work with data produced by the finopress finometer"
+authors = ["Kev O'Malley"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pandas = "1.5.3"
-openpyxl = "3.1.1"
-xlwings = "^0.30.0"
-pathlib = "^1.0.1"
-mkdocs = "^1.4.2"
-mkdocstrings = {extras = ["python"], version = "^0.21.2"}
+pandas = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
-mkdocs = "^1.4.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[build]
-source = "fino2py/src"
-

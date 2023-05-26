@@ -24,7 +24,7 @@ $ pip install fino2py
 
 Documentation
 -------------
-The complete documentation for fino2py, including installation instructions and usage examples, can be found at [Read the Docs](https://your-package-docs-url).
+The complete documentation for fino2py, including installation instructions and usage examples, can be found at [Read the Docs](https://fino2py.readthedocs.io/en/latest/).
 
 Citing
 ------

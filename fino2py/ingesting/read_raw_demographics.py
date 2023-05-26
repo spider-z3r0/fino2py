@@ -1,7 +1,20 @@
+"""
+This module provides a function to read the demographics data (Participant ID, age, height, weight) from the specified folder path and return a DataFrame containing the data.
+This can then be used to merge the demographics data with any of the other permutations of the cardiovascular/hemodynamic data produced by these functions.
+Notes
+-----
+- The function expects the finometer data to be stored in a single .txt file within the specified folder.
+- The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.
+
+
+Example
+-------
+P1_demographics = read_raw_demographics('path/to/folder')
+"""
 
 from ..dependencies import pd, pl
 
-def import_demographics(folder_path: str) -> pd.DataFrame:
+def read_raw_demographics(folder_path: str) -> pd.DataFrame:
     """
     Reads in the demographics from the .txt file and returns a DataFrame row containing the data.
 

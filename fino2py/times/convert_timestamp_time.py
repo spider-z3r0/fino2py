@@ -2,7 +2,7 @@ from ..dependencies import dt
 
 def convert_timestamp_time(timestamp_time: str) -> str:
     """
-    Convert the timestamp time in the format '09:02:12' to '%H:%M:%S' format.
+    Convert the timestamp string in the format '09:02:12' to '%H:%M:%S' datetime format.
 
     Parameters:
     ----------

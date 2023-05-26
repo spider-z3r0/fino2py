@@ -1,10 +1,42 @@
-from ..dependencies import pl, pd
+'''
+Generate averages for each section of the experimental protocol from already ingested finometer data.
+
+This module provides a function to calculate averages for each section of the experimental protocol. 
+The resulting averages are concatenated into a single row, allowing for easy merging of participants into a single dataframe. 
+Optionally, the function can save the reshaped data as a CSV file.
+
+Notes
+-----
+- The `frame` parameter should be a pandas DataFrame object containing data produced by `read_raw_finometer_data` function.
+- The `id` parameter should be a string representing the participant ID (should also be produced by `read_raw_finometer_data` function).
+- The `times` parameter should be a dictionary of tuples representing the time periods for calculating averages. There are functions in the times section to help formatting times.
+
+Example
+-------
+# Import averaged finometer data
+frame, id = read_raw_finometer_data('/path/to/folder')
+
+# Define the time periods for calculating averages
+times = {
+    'baseline': ('00:03:00, '00:10:00'),
+    'task': ('00:10:00', '00:19:00'),
+    ...
+}
+
+# Generate protocol averages
+averages = generate_protocol_averages(frame, id, times=times, save_csv=True)
+'''
+
+
+
+
+from ..dependencies import pl, pd, reduce
 from .create_chunk import create_chunk
 
 
-def import_protocol_averages(frame, id, times=None, save_csv=None):
-    '''A function that imports the averaged finometer files (which have already been processed from the raw data)
-    to produce averages for each section of the experimental protocol.
+def generate_protocol_averages(frame, id, times=None, save_csv=None):
+    '''A function that imports the finometer dataframes (which have already been processed from the raw data)
+    to produce averages for each section of the experimental protocol concatenated into a single row so that participants can then be merged into a single dataframe.
 
     Parameters
     ----------

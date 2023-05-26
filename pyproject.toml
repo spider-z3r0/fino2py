@@ -3,7 +3,7 @@ name = "fino2py"
 version = "0.1.0"
 description = "A package to help researchers and clinicians work with data produced by the finopress finometer"
 authors = ["Kev O'Malley"]
-readme = "README.md"
+readme = "README.rst"
 packages = [
     { include = "fino2py" },
 ]

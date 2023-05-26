@@ -37,7 +37,7 @@ Publication Date: May 2023
 
 APA Style:
 ------------
-O'Malley, K., Dempsey, A., Howard, S., McMahon, G., Griffen, G., (2023). fino2py (Version 0.1.0) [Software]. Available from https://www.mypackage.com
+O'Malley, K., Dempsey, A., Howard, S., McMahon, G., Griffen, G., (2023). fino2py (Version 0.1.0) [Software]. Available from https://pypi.org/project/fino2py
 
 
 BibTeX:
@@ -53,7 +53,8 @@ BibTeX:
 
 Contributing
 ------------
-Contributions are welcome! If you find any issues or have suggestions for improvements, please submit them to the [GitHub repository](https://github.com/spider-z3r0/fino2py).
+Contributions are welcome! If you find any issues or have suggestions for improvements, please submit them to the `GitHub repository <https://github.com/spider-z3r0/fino2py>`_.
+
 
 License
 -------

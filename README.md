@@ -53,7 +53,7 @@ BibTeX:
 
 Contributing
 ------------
-Contributions are welcome! If you find any issues or have suggestions for improvements, please submit them to the `GitHub repository <https://github.com/spider-z3r0/fino2py>`_.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please submit them to the [GitHub repository](https://github.com/spider-z3r0/fino2py).
 
 
 License

@@ -1,16 +1,24 @@
 '''
-These functions takes a dataframe and a time period and returns a dataframe with the mean values of the given columns during that portion of the study.
-The dataframe must have been created by the read_finometer_interval function.
-The time period must be in the format 'HH:MM:SS'.
+This module provides a function to create a chunk of data from a DataFrame between specified start and end times and return a new DataFrame containing the mean values for each cardiovascular measure during that chunk. 
+
+Notes
+-----
+ - The DataFrame must have been created by the `read_raw_finometer_data` function. 
+ - The time values must be in the format 'HH:MM:SS'. There are functions to help normalise the time values in the fino2py.times module.
+
+Example
+-------
+baseline_1 = create_chunk(df, 'Participant 1', 'Baseline', '00:00:00', '00:05:00')
 '''
+
 from ..dependencies import pd, Union
-from ..times.convert_partial_time import convert_partial_time
+from ..times.convert_timestamp_time import convert_timestamp_time
 
 
 def create_chunk(df: pd.DataFrame, ID: str, tag: str, start: Union[str, None], end: Union[str, None]) -> pd.DataFrame:
     """
     Create a chunk of data from a dataframe between specified start and end times and return a new dataframe
-    containing the mean values for each column in the chunk.
+    containing the mean values for each cardiovascular measure during that chunk.
     
     Parameters:
     -----------
@@ -37,12 +45,12 @@ def create_chunk(df: pd.DataFrame, ID: str, tag: str, start: Union[str, None], e
     # Convert start and end times to datetime objects if they are specified
     if start:
         try:
-            start = convert_time(start)
+            start = convert_timestamp_time(start)
         except:
             raise ValueError(f"Could not convert {start} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
     if end:
         try:
-            end = convert_time(end)
+            end = convert_timestamp_time(end)
         except:
             raise ValueError(f"Could not convert {end} to datetime object, it must be a string in the format 'HH:MM:SS' or 'HH:MM:SS.mmm'")
 

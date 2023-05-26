@@ -1,6 +1,23 @@
-from ..dependencies import pl, pd, Union, Tuple, Optional
+'''
+Import raw finometer data and, if specified, calculate the average of each measure over a selected time period.
+
+This module provides a function to import the raw finometer data from a specified folder path or file and calculate the average of each measure over a selected time period. The default time period is 1 minute, but it can be changed by setting the `interval` parameter to a different value. This function is a convenient way to preprocess the data before further analysis.
 
 
+Notes
+-----
+- The function expects the finometer data to be stored in a single .txt file within the specified folder.
+- The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.
+- If `interval` is provided, the data is resampled to the given interval using the mean value for each resampled interval.
+- If `save_csv` is True, the imported data (or the resampled data if `interval` is provided) is saved as a CSV file in the same folder as the data file.
+
+Example
+-------
+df, id = read_raw_finometer_data('/path/to/folder', interval='1T', save_csv=True)
+'''
+
+
+from ..dependencies import pl, pd, Union, Tuple, Optional, dt
 
 def read_raw_finometer_data(folder_path: Union[str, pl.Path], interval: Optional[str] = None, save_csv: bool = False) -> Tuple[pd.DataFrame, str]:
     '''This function imports the raw finometer data and then calculates the average of each measure over the selected time period
@@ -72,7 +89,7 @@ def read_raw_finometer_data(folder_path: Union[str, pl.Path], interval: Optional
 
         csv_path = folder_path / file.with_stem(f'imported {interval} data for {ID}').with_suffix('.csv')
         try:
-            df_resampled = df.set_index(pd.to_datetime(df['Time (s)'], format='%H:%M:%S.%f')).resample(f'{interval}').mean()
+            df_resampled = df.set_index(pd.to_datetime(df['Time (s)'], format='%H:%M:%S.%f')).resample(f'{interval}').mean(numeric_only=True)
             df_resampled.index = df_resampled.index.strftime('%H:%M:%S.%f').str[:-3]
         except ValueError:
             raise ValueError(f'{interval} is not a valid time period, valid time periods are: 1s, 1T, 1H, 1D, 1W, 1M, 1Q, 1A')

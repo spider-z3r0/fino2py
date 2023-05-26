@@ -47,7 +47,9 @@ To install the project, follow these steps:
    :maxdepth: 2
    :caption: Contents:
 
+   citation
    fino2py
+   
 
 
 

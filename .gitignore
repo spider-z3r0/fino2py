@@ -152,6 +152,7 @@ cython_debug/
 #.idea/
 
 # Folders to be ignored
+/test-jupyter
 /data
 /AILBHE
 /Data_FYP

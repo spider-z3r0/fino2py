@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 Generate averages for each section of the experimental protocol from already ingested finometer data.
 

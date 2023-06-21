@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 Append cardiovascular data from a second file to a first file and optionally write the combined data to a new file.
 In some cases, due to issue with the finometer during data collection, a single participant may end up with two seperate folders with seperate `.txt` files. 

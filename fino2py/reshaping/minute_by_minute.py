@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 This module provides a function for reshaping participant's minute-by-minute data into a single row.
 

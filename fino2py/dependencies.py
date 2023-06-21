@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 This script is just housing the dependencies for the other scripts in the src folder.
 It is not intended to be run as a script.

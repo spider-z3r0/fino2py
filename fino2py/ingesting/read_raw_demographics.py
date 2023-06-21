@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
 This module provides a function to read the demographics data (Participant ID, age, height, weight) from the specified folder path and return a DataFrame containing the data.
 This can then be used to merge the demographics data with any of the other permutations of the cardiovascular/hemodynamic data produced by these functions.

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''Reshape finometer data into a minute-by-minute format from files in a folder.
 
 This module provides a function to read the raw finometer data from the specified folder path and reshape the data into a minute-by-minute format. 

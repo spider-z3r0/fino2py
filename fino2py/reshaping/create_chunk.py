@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 This module provides a function to create a chunk of data from a DataFrame between specified start and end times and return a new DataFrame containing the mean values for each cardiovascular measure during that chunk. 
 

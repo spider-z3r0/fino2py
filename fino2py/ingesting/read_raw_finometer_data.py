@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 Import raw finometer data and, if specified, calculate the average of each measure over a selected time period.
 

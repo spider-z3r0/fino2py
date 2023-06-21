@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 ##Import all functions from the submodules
 
 # The ingesting modules

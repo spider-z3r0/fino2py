@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fino2py.reshaping package &mdash; fino2py 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fino2py.times package" href="fino2py.times.html" />
+    <link rel="prev" title="fino2py.ingesting package" href="fino2py.ingesting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            fino2py
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing This Package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fino2py.html">fino2py package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fino2py.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fino2py.reshaping package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.reshaping.create_chunk">fino2py.reshaping.create_chunk module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.reshaping.generate_protocol_averages">fino2py.reshaping.generate_protocol_averages module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.reshaping.minute_by_minute">fino2py.reshaping.minute_by_minute module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.reshaping.minute_by_minute_from_folder">fino2py.reshaping.minute_by_minute_from_folder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.reshaping">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.times.html">fino2py.times package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">fino2py</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fino2py</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="fino2py.html">fino2py package</a></li>
+      <li class="breadcrumb-item active">fino2py.reshaping package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fino2py.reshaping.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fino2py-reshaping-package">
+<h1>fino2py.reshaping package<a class="headerlink" href="#fino2py-reshaping-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-fino2py.reshaping.create_chunk">
+<span id="fino2py-reshaping-create-chunk-module"></span><h2>fino2py.reshaping.create_chunk module<a class="headerlink" href="#module-fino2py.reshaping.create_chunk" title="Permalink to this heading"></a></h2>
+<p>This module provides a function to create a chunk of data from a DataFrame between specified start and end times and return a new DataFrame containing the mean values for each cardiovascular measure during that chunk.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The DataFrame must have been created by the <cite>read_raw_finometer_data</cite> function.</p></li>
+<li><p>The time values must be in the format ‘HH:MM:SS’. There are functions to help normalise the time values in the fino2py.times module.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>baseline_1 = create_chunk(df, ‘Participant 1’, ‘Baseline’, ‘00:00:00’, ‘00:05:00’)</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.reshaping.create_chunk.create_chunk">
+<span class="sig-prename descclassname"><span class="pre">fino2py.reshaping.create_chunk.</span></span><span class="sig-name descname"><span class="pre">create_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/reshaping/create_chunk.html#create_chunk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.reshaping.create_chunk.create_chunk" title="Permalink to this definition"></a></dt>
+<dd><p>Create a chunk of data from a dataframe between specified start and end times and return a new dataframe
+containing the mean values for each cardiovascular measure during that chunk.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>df<span class="classifier">pandas DataFrame</span></dt><dd><p>The dataframe containing the data to extract a chunk from.</p>
+</dd>
+<dt>ID<span class="classifier">str</span></dt><dd><p>The participant ID to include in the output dataframe.</p>
+</dd>
+<dt>tag<span class="classifier">str</span></dt><dd><p>The tag to include in the column names of the output dataframe.</p>
+</dd>
+<dt>start<span class="classifier">str or None</span></dt><dd><p>The start time of the chunk in the format ‘HH:MM:SS’ or ‘HH:MM:SS.mmm’. If None, the chunk starts at the
+beginning of the dataframe.</p>
+</dd>
+<dt>end<span class="classifier">str or None</span></dt><dd><p>The end time of the chunk in the format ‘HH:MM:SS’ or ‘HH:MM:SS.mmm’. If None, the chunk ends at the
+end of the dataframe.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>pandas DataFrame</dt><dd><p>A new dataframe containing the mean values for each column in the specified chunk of the input dataframe.
+The output dataframe has a row for the specified participant ID and columns with names that include the
+specified tag.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.reshaping.generate_protocol_averages">
+<span id="fino2py-reshaping-generate-protocol-averages-module"></span><h2>fino2py.reshaping.generate_protocol_averages module<a class="headerlink" href="#module-fino2py.reshaping.generate_protocol_averages" title="Permalink to this heading"></a></h2>
+<p>Generate averages for each section of the experimental protocol from already ingested finometer data.</p>
+<p>This module provides a function to calculate averages for each section of the experimental protocol.
+The resulting averages are concatenated into a single row, allowing for easy merging of participants into a single dataframe.
+Optionally, the function can save the reshaped data as a CSV file.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The <cite>frame</cite> parameter should be a pandas DataFrame object containing data produced by <cite>read_raw_finometer_data</cite> function.</p></li>
+<li><p>The <cite>id</cite> parameter should be a string representing the participant ID (should also be produced by <cite>read_raw_finometer_data</cite> function).</p></li>
+<li><p>The <cite>times</cite> parameter should be a dictionary of tuples representing the time periods for calculating averages. There are functions in the times section to help formatting times.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p># Import averaged finometer data
+frame, id = read_raw_finometer_data(‘/path/to/folder’)</p>
+<p># Define the time periods for calculating averages
+times = {</p>
+<blockquote>
+<div><p>‘baseline’: (‘00:03:00, ‘00:10:00’),
+‘task’: (‘00:10:00’, ‘00:19:00’),
+…</p>
+</div></blockquote>
+<p>}</p>
+<p># Generate protocol averages
+averages = generate_protocol_averages(frame, id, times=times, save_csv=True)</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.reshaping.generate_protocol_averages.generate_protocol_averages">
+<span class="sig-prename descclassname"><span class="pre">fino2py.reshaping.generate_protocol_averages.</span></span><span class="sig-name descname"><span class="pre">generate_protocol_averages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fino2py/reshaping/generate_protocol_averages.html#generate_protocol_averages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.reshaping.generate_protocol_averages.generate_protocol_averages" title="Permalink to this definition"></a></dt>
+<dd><p>A function that imports the finometer dataframes (which have already been processed from the raw data)
+to produce averages for each section of the experimental protocol concatenated into a single row so that participants can then be merged into a single dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<em>pandas.DataFrame</em>) – The DataFrame containing the averaged finometer data</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – The participant ID</p></li>
+<li><p><strong>save_csv</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the imported data will be saved as a .csv file in the same folder as the .csv file,
+this is not always needed and should be used sparingly</p></li>
+<li><p><strong>times</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dictionary of tuples of times, with the keys being the names of the time periods.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with the mean values of the given columns during each time period of the study.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – If frame is not a pandas.DataFrame object
+    If id is not a string</p></li>
+<li><p><strong>ValueError</strong> – If times is not provided as a dictionary with at least one key-value pair
+    If there are not enough times provided for a given time period
+    If there are too many times provided for a given time period</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.reshaping.minute_by_minute">
+<span id="fino2py-reshaping-minute-by-minute-module"></span><h2>fino2py.reshaping.minute_by_minute module<a class="headerlink" href="#module-fino2py.reshaping.minute_by_minute" title="Permalink to this heading"></a></h2>
+<p>This module provides a function for reshaping participant’s minute-by-minute data into a single row.</p>
+<p>The main function, <cite>minute_by_minute</cite>, takes a DataFrame containing finometer data and performs reshaping of the data. It converts the index into a column named “Time (s)” to preserve the original time information. The DataFrame is then flattened, creating a new DataFrame with each minute’s data in separate columns. The column names are generated by appending “_minute_i” to the original column names, where “i” represents the minute index. The Participant ID is added as a column at the beginning of the new DataFrame, facilitating concatenation of participant data for sample-level analysis.</p>
+<p>Note: The <cite>minute_by_minute</cite> function assumes that the input DataFrame contains the necessary columns and structure for reshaping.</p>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
+<dl>
+<dt>minute_by_minute(df: pd.DataFrame, df_id: str) -&gt; pd.DataFrame:</dt><dd><p>Reshape the participant’s minute-by-minute data into a single row.
+Returns a DataFrame with each minute’s data in separate columns.</p>
+<dl class="simple">
+<dt>df<span class="classifier">pandas DataFrame</span></dt><dd><p>The DataFrame containing finometer data.</p>
+</dd>
+<dt>df_id<span class="classifier">str</span></dt><dd><p>The Participant ID associated with the data.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>pandas DataFrame</dt><dd><p>The reshaped minute-by-minute data DataFrame.
+Each minute’s data is in separate columns, with column names reflecting the original column names and minute indices. The Participant ID column is included at the beginning.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.reshaping.minute_by_minute.minute_by_minute">
+<span class="sig-prename descclassname"><span class="pre">fino2py.reshaping.minute_by_minute.</span></span><span class="sig-name descname"><span class="pre">minute_by_minute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/reshaping/minute_by_minute.html#minute_by_minute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.reshaping.minute_by_minute.minute_by_minute" title="Permalink to this definition"></a></dt>
+<dd><p>Reshape the participant’s minute by minute data into a single row</p>
+<p>This function takes a DataFrame containing finometer data (<cite>df</cite>). It converts the index of the DataFrame into a column named “Time (s)” to preserve the original time information.</p>
+<p>The DataFrame is then flattened to create a new DataFrame (<cite>flat_frame</cite>) with each minute’s data in a separate column. The column names are generated by appending “_minute_i” to the original column names, where “i” represents the minute index.</p>
+<p>The Participant ID (<cite>df_id</cite>) is added as a column at the beginning of the <cite>flat_frame</cite> DataFrame. This allows for participant data to be easily concatenated into a single DataFrame for sample level analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas DataFrame</em>) – The DataFrame containing the finometer data.</p></li>
+<li><p><strong>df_id</strong> (<em>str</em>) – The Participant ID associated with the data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The minute-by-minute analysis DataFrame.</p>
+<p>The <cite>flat_frame</cite> DataFrame contains each minute’s data in separate columns, with column names reflecting the original column names and minute indices. The Participant ID column is included at the beginning.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.reshaping.minute_by_minute_from_folder">
+<span id="fino2py-reshaping-minute-by-minute-from-folder-module"></span><h2>fino2py.reshaping.minute_by_minute_from_folder module<a class="headerlink" href="#module-fino2py.reshaping.minute_by_minute_from_folder" title="Permalink to this heading"></a></h2>
+<p>Reshape finometer data into a minute-by-minute format from files in a folder.</p>
+<p>This module provides a function to read the raw finometer data from the specified folder path and reshape the data into a minute-by-minute format.
+It utilizes the <cite>read_raw_finometer_data</cite> function to import the data and calculate the average of each measure over the selected time interval (default is 1 minute).
+The <cite>minute_by_minute</cite> function is then applied to reshape the data into a single row, with each column representing the average of a particular measure over each minute of the data collection.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The <cite>read_raw_finometer_data</cite> function is used to import the raw finometer data and calculate the average over the selected time interval.</p></li>
+<li><p>The <cite>minute_by_minute</cite> function is applied to reshape the data into a single row for each minute.</p></li>
+<li><p>If <cite>save_raw</cite> is True, the imported raw data is saved as a CSV file in the same folder as the data files.</p></li>
+<li><p>If <cite>save</cite> is True, the minute-by-minute reshaped data is saved as a CSV file in the same folder as the data files.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>frame, id = minute_by_minute_from_folder(‘/path/to/folder’, int=’1T’, save_raw=True, save=True)</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.reshaping.minute_by_minute_from_folder.minute_by_minute_from_folder">
+<span class="sig-prename descclassname"><span class="pre">fino2py.reshaping.minute_by_minute_from_folder.</span></span><span class="sig-name descname"><span class="pre">minute_by_minute_from_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fino2py/reshaping/minute_by_minute_from_folder.html#minute_by_minute_from_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.reshaping.minute_by_minute_from_folder.minute_by_minute_from_folder" title="Permalink to this definition"></a></dt>
+<dd><p>This function reads the raw finometer data from the specified folder path and ‘reshapes’ the data into a minute-by-minute format.
+It uses the <cite>read_raw_finometer_data</cite> function to import the data and calculate the average of each measure over the selected time interval (1 minute in this case).
+Then, the <cite>minute_by_minute</cite> function is applied to reshape the data into a single row, with each column representing the average of a particular measure over each minute of the data collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The path to the folder containing the finometer data files.</p></li>
+<li><p><strong>save_raw</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifies whether to save the imported raw data as a CSV file. The default is False.</p></li>
+<li><p><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifies whether to save the minute-by-minute analysis result as a CSV file. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the minute-by-minute analysis DataFrame and the Participant ID associated with the data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[pd.DataFrame, str]</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The <cite>read_raw_finometer_data</cite> function is used to import the raw finometer data and calculate the average over the selected time interval.</p></li>
+<li><p>The <cite>minute_by_minute</cite> function is applied to reshape the data into a single row for each minute.</p></li>
+<li><p>If <cite>save_raw</cite> is True, the imported raw data is saved as a CSV file in the same folder as the data files.</p></li>
+<li><p>If <cite>save</cite> is True, the minute-by-minute analysis result is saved as a CSV file in the same folder as the data files.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>frame, id = minute_by_minute_from_folder(‘/path/to/folder’, int=’1T’, save_raw=True, save=True)</p>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.reshaping">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fino2py.reshaping" title="Permalink to this heading"></a></h2>
+<p>This is the fino2py package for analyzing SmartMedical finometer data.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fino2py.ingesting.html" class="btn btn-neutral float-left" title="fino2py.ingesting package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fino2py.times.html" class="btn btn-neutral float-right" title="fino2py.times package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

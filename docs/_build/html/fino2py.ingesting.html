@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fino2py.ingesting package &mdash; fino2py 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fino2py.reshaping package" href="fino2py.reshaping.html" />
+    <link rel="prev" title="fino2py.cleaning package" href="fino2py.cleaning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            fino2py
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing This Package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fino2py.html">fino2py package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fino2py.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fino2py.ingesting package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.ingesting.read_raw_demographics">fino2py.ingesting.read_raw_demographics module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.ingesting.read_raw_finometer_data">fino2py.ingesting.read_raw_finometer_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.ingesting">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.reshaping.html">fino2py.reshaping package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.times.html">fino2py.times package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">fino2py</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fino2py</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="fino2py.html">fino2py package</a></li>
+      <li class="breadcrumb-item active">fino2py.ingesting package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fino2py.ingesting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fino2py-ingesting-package">
+<h1>fino2py.ingesting package<a class="headerlink" href="#fino2py-ingesting-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-fino2py.ingesting.read_raw_demographics">
+<span id="fino2py-ingesting-read-raw-demographics-module"></span><h2>fino2py.ingesting.read_raw_demographics module<a class="headerlink" href="#module-fino2py.ingesting.read_raw_demographics" title="Permalink to this heading"></a></h2>
+<p>This module provides a function to read the demographics data (Participant ID, age, height, weight) from the specified folder path and return a DataFrame containing the data.
+This can then be used to merge the demographics data with any of the other permutations of the cardiovascular/hemodynamic data produced by these functions.
+.. rubric:: Notes</p>
+<ul class="simple">
+<li><p>The function expects the finometer data to be stored in a single .txt file within the specified folder.</p></li>
+<li><p>The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>P1_demographics = read_raw_demographics(‘path/to/folder’)</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.ingesting.read_raw_demographics.read_raw_demographics">
+<span class="sig-prename descclassname"><span class="pre">fino2py.ingesting.read_raw_demographics.</span></span><span class="sig-name descname"><span class="pre">read_raw_demographics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/ingesting/read_raw_demographics.html#read_raw_demographics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.ingesting.read_raw_demographics.read_raw_demographics" title="Permalink to this definition"></a></dt>
+<dd><p>Reads in the demographics from the .txt file and returns a DataFrame row containing the data.</p>
+<p>Parameters:
+file_path (str): Path to the demographics file.</p>
+<p>Returns:
+demographics_df (pd.DataFrame): DataFrame containing the demographics data.</p>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.ingesting.read_raw_finometer_data">
+<span id="fino2py-ingesting-read-raw-finometer-data-module"></span><h2>fino2py.ingesting.read_raw_finometer_data module<a class="headerlink" href="#module-fino2py.ingesting.read_raw_finometer_data" title="Permalink to this heading"></a></h2>
+<p>Import raw finometer data and, if specified, calculate the average of each measure over a selected time period.</p>
+<p>This module provides a function to import the raw finometer data from a specified folder path or file and calculate the average of each measure over a selected time period. The default time period is 1 minute, but it can be changed by setting the <cite>interval</cite> parameter to a different value. This function is a convenient way to preprocess the data before further analysis.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function expects the finometer data to be stored in a single .txt file within the specified folder.</p></li>
+<li><p>The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.</p></li>
+<li><p>If <cite>interval</cite> is provided, the data is resampled to the given interval using the mean value for each resampled interval.</p></li>
+<li><p>If <cite>save_csv</cite> is True, the imported data (or the resampled data if <cite>interval</cite> is provided) is saved as a CSV file in the same folder as the data file.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>df, id = read_raw_finometer_data(‘/path/to/folder’, interval=’1T’, save_csv=True)</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.ingesting.read_raw_finometer_data.read_raw_finometer_data">
+<span class="sig-prename descclassname"><span class="pre">fino2py.ingesting.read_raw_finometer_data.</span></span><span class="sig-name descname"><span class="pre">read_raw_finometer_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fino2py/ingesting/read_raw_finometer_data.html#read_raw_finometer_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.ingesting.read_raw_finometer_data.read_raw_finometer_data" title="Permalink to this definition"></a></dt>
+<dd><p>This function imports the raw finometer data and then calculates the average of each measure over the selected time period
+The default time period is 1 minute, but this can be changed by setting the interval parameter to a different value.
+This function may not be needed in many cases, but it is useful to have, and a good place to start.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folder_path</strong> (<em>pathlib.Path object</em><em> or </em><em>str</em>) – The path to the folder containing the .txt file</p></li>
+<li><p><strong>interval</strong> (<em>str</em><em>, </em><em>optional</em>) – If provided, the function will resample the data to the given interval and return the resampled data.</p></li>
+<li><p><strong>save_csv</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the function will save the imported data as a .csv file in the same folder as the .txt file.
+The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError:</strong> – If folder_path is not a pathlib.Path object or a string</p></li>
+<li><p><strong>ValueError:</strong> – If folder_path does not exist or is not a directory
+    If there is not exactly one .txt file in the folder</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>pandas.DataFrame</em> – Dataframe with the raw finometer data resampled to the given interval</p></li>
+<li><p><strong>ID</strong> (<em>str</em>) – The Participant ID of the participant whose data is being imported</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-fino2py.ingesting">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fino2py.ingesting" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fino2py.cleaning.html" class="btn btn-neutral float-left" title="fino2py.cleaning package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fino2py.reshaping.html" class="btn btn-neutral float-right" title="fino2py.reshaping package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

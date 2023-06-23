@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fino2py.reshaping.create_chunk &mdash; fino2py 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            fino2py
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing This Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.html">fino2py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fino2py</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fino2py</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">fino2py.reshaping.create_chunk</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for fino2py.reshaping.create_chunk</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This module provides a function to create a chunk of data from a DataFrame between specified start and end times and return a new DataFrame containing the mean values for each cardiovascular measure during that chunk. </span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd"> - The DataFrame must have been created by the `read_raw_finometer_data` function. </span>
+<span class="sd"> - The time values must be in the format &#39;HH:MM:SS&#39;. There are functions to help normalise the time values in the fino2py.times module.</span>
+
+<span class="sd">Example</span>
+<span class="sd">-------</span>
+<span class="sd">baseline_1 = create_chunk(df, &#39;Participant 1&#39;, &#39;Baseline&#39;, &#39;00:00:00&#39;, &#39;00:05:00&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">..dependencies</span> <span class="kn">import</span> <span class="n">pd</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">..times.convert_timestamp_time</span> <span class="kn">import</span> <span class="n">convert_timestamp_time</span>
+
+
+<div class="viewcode-block" id="create_chunk"><a class="viewcode-back" href="../../../fino2py.reshaping.html#fino2py.create_chunk">[docs]</a><span class="k">def</span> <span class="nf">create_chunk</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ID</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">end</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a chunk of data from a dataframe between specified start and end times and return a new dataframe</span>
+<span class="sd">    containing the mean values for each cardiovascular measure during that chunk.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    df : pandas DataFrame</span>
+<span class="sd">        The dataframe containing the data to extract a chunk from.</span>
+<span class="sd">    ID : str</span>
+<span class="sd">        The participant ID to include in the output dataframe.</span>
+<span class="sd">    tag : str</span>
+<span class="sd">        The tag to include in the column names of the output dataframe.</span>
+<span class="sd">    start : str or None</span>
+<span class="sd">        The start time of the chunk in the format &#39;HH:MM:SS&#39; or &#39;HH:MM:SS.mmm&#39;. If None, the chunk starts at the </span>
+<span class="sd">        beginning of the dataframe.</span>
+<span class="sd">    end : str or None</span>
+<span class="sd">        The end time of the chunk in the format &#39;HH:MM:SS&#39; or &#39;HH:MM:SS.mmm&#39;. If None, the chunk ends at the </span>
+<span class="sd">        end of the dataframe.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    pandas DataFrame</span>
+<span class="sd">        A new dataframe containing the mean values for each column in the specified chunk of the input dataframe.</span>
+<span class="sd">        The output dataframe has a row for the specified participant ID and columns with names that include the</span>
+<span class="sd">        specified tag.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert start and end times to datetime objects if they are specified</span>
+    <span class="k">if</span> <span class="n">start</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">convert_timestamp_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2"> to datetime object, it must be a string in the format &#39;HH:MM:SS&#39; or &#39;HH:MM:SS.mmm&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">end</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">convert_timestamp_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2"> to datetime object, it must be a string in the format &#39;HH:MM:SS&#39; or &#39;HH:MM:SS.mmm&#39;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Extract the chunk of data and compute the mean values for each column</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">end</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">elif</span> <span class="n">start</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">elif</span> <span class="n">end</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="c1"># Rename the columns with the specified tag and insert the participant ID as the first column</span>
+    <span class="n">chunk</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">chunk</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">chunk</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Participant ID&#39;</span><span class="p">,</span> <span class="n">ID</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">chunk</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

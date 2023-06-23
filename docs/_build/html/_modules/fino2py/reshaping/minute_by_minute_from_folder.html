@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fino2py.reshaping.minute_by_minute_from_folder &mdash; fino2py 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            fino2py
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing This Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.html">fino2py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fino2py</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fino2py</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">fino2py.reshaping.minute_by_minute_from_folder</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for fino2py.reshaping.minute_by_minute_from_folder</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&#39;&#39;&#39;Reshape finometer data into a minute-by-minute format from files in a folder.</span>
+
+<span class="sd">This module provides a function to read the raw finometer data from the specified folder path and reshape the data into a minute-by-minute format. </span>
+<span class="sd">It utilizes the `read_raw_finometer_data` function to import the data and calculate the average of each measure over the selected time interval (default is 1 minute). </span>
+<span class="sd">The `minute_by_minute` function is then applied to reshape the data into a single row, with each column representing the average of a particular measure over each minute of the data collection.</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">- The `read_raw_finometer_data` function is used to import the raw finometer data and calculate the average over the selected time interval.</span>
+<span class="sd">- The `minute_by_minute` function is applied to reshape the data into a single row for each minute.</span>
+<span class="sd">- If `save_raw` is True, the imported raw data is saved as a CSV file in the same folder as the data files.</span>
+<span class="sd">- If `save` is True, the minute-by-minute reshaped data is saved as a CSV file in the same folder as the data files.</span>
+
+<span class="sd">Example</span>
+<span class="sd">-------</span>
+<span class="sd">frame, id = minute_by_minute_from_folder(&#39;/path/to/folder&#39;, int=&#39;1T&#39;, save_raw=True, save=True)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">..dependencies</span> <span class="kn">import</span> <span class="n">pd</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">..ingesting.read_raw_finometer_data</span> <span class="kn">import</span> <span class="n">read_raw_finometer_data</span>
+<span class="kn">from</span> <span class="nn">.minute_by_minute</span> <span class="kn">import</span> <span class="n">minute_by_minute</span>
+
+<div class="viewcode-block" id="minute_by_minute_from_folder"><a class="viewcode-back" href="../../../fino2py.reshaping.html#fino2py.minute_by_minute_from_folder">[docs]</a><span class="k">def</span> <span class="nf">minute_by_minute_from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">save_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">    This function reads the raw finometer data from the specified folder path and &#39;reshapes&#39; the data into a minute-by-minute format. </span>
+<span class="sd">    It uses the `read_raw_finometer_data` function to import the data and calculate the average of each measure over the selected time interval (1 minute in this case). </span>
+<span class="sd">    Then, the `minute_by_minute` function is applied to reshape the data into a single row, with each column representing the average of a particular measure over each minute of the data collection.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">        The path to the folder containing the finometer data files.</span>
+<span class="sd">    save_raw : bool, optional</span>
+<span class="sd">        Specifies whether to save the imported raw data as a CSV file. The default is False.</span>
+<span class="sd">    save : bool, optional</span>
+<span class="sd">        Specifies whether to save the minute-by-minute analysis result as a CSV file. The default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[pd.DataFrame, str]</span>
+<span class="sd">        A tuple containing the minute-by-minute analysis DataFrame and the Participant ID associated with the data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - The `read_raw_finometer_data` function is used to import the raw finometer data and calculate the average over the selected time interval.</span>
+<span class="sd">    - The `minute_by_minute` function is applied to reshape the data into a single row for each minute.</span>
+<span class="sd">    - If `save_raw` is True, the imported raw data is saved as a CSV file in the same folder as the data files.</span>
+<span class="sd">    - If `save` is True, the minute-by-minute analysis result is saved as a CSV file in the same folder as the data files.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    frame, id = minute_by_minute_from_folder(&#39;/path/to/folder&#39;, int=&#39;1T&#39;, save_raw=True, save=True)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">frame</span><span class="p">,</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">read_raw_finometer_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span> <span class="s1">&#39;1T&#39;</span><span class="p">,</span> <span class="n">save_csv</span><span class="o">=</span><span class="n">save_raw</span><span class="p">)</span>
+
+    <span class="n">minute_frame</span> <span class="o">=</span> <span class="n">minute_by_minute</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">save</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">minute_frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s1"> minute_by_minute.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">minute_frame</span><span class="p">,</span> <span class="nb">id</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

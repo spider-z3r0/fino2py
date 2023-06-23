@@ -44,25 +44,29 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing This Package</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="fino2py.html">fino2py package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="fino2py.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.reshaping.html">fino2py.reshaping package</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">fino2py.times package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.times.convert_fino_time">fino2py.times.convert_fino_time module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.times.convert_partial_time">fino2py.times.convert_partial_time module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.times.convert_timestamp_time">fino2py.times.convert_timestamp_time module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.times.import_protocol_times">fino2py.times.import_protocol_times module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-fino2py.times">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.reshaping.html">fino2py.reshaping package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">fino2py.times package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fino2py.times.convert_fino_time">fino2py.times.convert_fino_time module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fino2py.times.convert_fino_time.convert_fino_time"><code class="docutils literal notranslate"><span class="pre">convert_fino_time()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fino2py.times.convert_partial_time">fino2py.times.convert_partial_time module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fino2py.times.convert_partial_time.convert_partial_time"><code class="docutils literal notranslate"><span class="pre">convert_partial_time()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fino2py.times.convert_timestamp_time">fino2py.times.convert_timestamp_time module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fino2py.times.convert_timestamp_time.convert_timestamp_time"><code class="docutils literal notranslate"><span class="pre">convert_timestamp_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fino2py.times.import_protocol_times">fino2py.times.import_protocol_times module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fino2py.times.import_protocol_times.import_protocol_times"><code class="docutils literal notranslate"><span class="pre">import_protocol_times()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fino2py.times">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +174,7 @@
 <span id="fino2py-times-import-protocol-times-module"></span><h2>fino2py.times.import_protocol_times module<a class="headerlink" href="#module-fino2py.times.import_protocol_times" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="fino2py.times.import_protocol_times.import_protocol_times">
-<span class="sig-prename descclassname"><span class="pre">fino2py.times.import_protocol_times.</span></span><span class="sig-name descname"><span class="pre">import_protocol_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/times/import_protocol_times.html#import_protocol_times"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.times.import_protocol_times.import_protocol_times" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">fino2py.times.import_protocol_times.</span></span><span class="sig-name descname"><span class="pre">import_protocol_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/times/import_protocol_times.html#import_protocol_times"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.times.import_protocol_times.import_protocol_times" title="Permalink to this definition"></a></dt>
 <dd><p>This function imports the protocol times from a .csv or excel file file and returns a cleaned pandas dataframe with the protocol times for each participant.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

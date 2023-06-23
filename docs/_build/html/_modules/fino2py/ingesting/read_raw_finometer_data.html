@@ -43,7 +43,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing This Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.html">fino2py package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fino2py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.cleaning.html">fino2py.cleaning package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.ingesting.html">fino2py.ingesting package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.reshaping.html">fino2py.reshaping package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.times.html">fino2py.times package</a></li>
 </ul>
 
         </div>
@@ -74,57 +77,39 @@
 <span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Import raw finometer data and, if specified, calculate the average of each measure over a selected time period.</span>
-
-<span class="sd">This module provides a function to import the raw finometer data from a specified folder path or file and calculate the average of each measure over a selected time period. The default time period is 1 minute, but it can be changed by setting the `interval` parameter to a different value. This function is a convenient way to preprocess the data before further analysis.</span>
-
-
-<span class="sd">Notes</span>
-<span class="sd">-----</span>
-<span class="sd">- The function expects the finometer data to be stored in a single .txt file within the specified folder.</span>
-<span class="sd">- The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.</span>
-<span class="sd">- If `interval` is provided, the data is resampled to the given interval using the mean value for each resampled interval.</span>
-<span class="sd">- If `save_csv` is True, the imported data (or the resampled data if `interval` is provided) is saved as a CSV file in the same folder as the data file.</span>
-
-<span class="sd">Example</span>
-<span class="sd">-------</span>
-<span class="sd">df, id = read_raw_finometer_data(&#39;/path/to/folder&#39;, interval=&#39;1T&#39;, save_csv=True)</span>
-<span class="sd">&#39;&#39;&#39;</span>
 
 
 <span class="kn">from</span> <span class="nn">..dependencies</span> <span class="kn">import</span> <span class="n">pl</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">dt</span>
 
 <div class="viewcode-block" id="read_raw_finometer_data"><a class="viewcode-back" href="../../../fino2py.ingesting.html#fino2py.read_raw_finometer_data">[docs]</a><span class="k">def</span> <span class="nf">read_raw_finometer_data</span><span class="p">(</span><span class="n">folder_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">Path</span><span class="p">],</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_csv</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function imports the raw finometer data and then calculates the average of each measure over the selected time period</span>
-<span class="sd">    The default time period is 1 minute, but this can be changed by setting the interval parameter to a different value. </span>
-<span class="sd">    This function may not be needed in many cases, but it is useful to have, and a good place to start.</span>
-<span class="sd">    </span>
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    folder_path : pathlib.Path object or str </span>
-<span class="sd">        The path to the folder containing the .txt file</span>
-<span class="sd">    interval : str, optional</span>
-<span class="sd">        If provided, the function will resample the data to the given interval and return the resampled data.</span>
-<span class="sd">    save_csv : bool, optional</span>
-<span class="sd">        If True, the function will save the imported data as a .csv file in the same folder as the .txt file.</span>
-<span class="sd">        The default is False.</span>
-<span class="sd">    Raises</span>
-<span class="sd">    ------</span>
-<span class="sd">    TypeError:</span>
-<span class="sd">        If folder_path is not a pathlib.Path object or a string</span>
-<span class="sd">    ValueError:</span>
-<span class="sd">        If folder_path does not exist or is not a directory</span>
-<span class="sd">        If there is not exactly one .txt file in the folder</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Imports the raw finometer data and calculates the average of each measure over the selected time period.</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    pandas.DataFrame:</span>
-<span class="sd">        Dataframe with the raw finometer data resampled to the given interval</span>
+<span class="sd">    This function imports the raw finometer data from the specified folder path or file and calculates the average of each measure over a selected time period. The default time period is 1 minute, but it can be changed by setting the `interval` parameter to a different value. This function is a convenient way to preprocess the data before further analysis.</span>
 
-<span class="sd">    ID : str</span>
-<span class="sd">        The Participant ID of the participant whose data is being imported</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        folder_path (Union[str, pathlib.Path]): The path to the folder containing the .txt file.</span>
+<span class="sd">        interval (str, optional): If provided, the data is resampled to the given interval. Defaults to None.</span>
+<span class="sd">        save_csv (bool, optional): If True, the imported data (or the resampled data if `interval` is provided) is saved as a CSV file in the same folder as the data file. Defaults to False.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If `folder_path` is not a pathlib.Path object or a string.</span>
+<span class="sd">        ValueError: If `folder_path` does not exist or is not a directory.</span>
+<span class="sd">                    If there is not exactly one .txt file in the folder.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple[pd.DataFrame, str]: A tuple containing the following:</span>
+<span class="sd">            - A DataFrame with the raw finometer data resampled to the given interval.</span>
+<span class="sd">            - The Participant ID of the participant whose data is being imported.</span>
+
+<span class="sd">    Notes:</span>
+<span class="sd">        - The function expects the finometer data to be stored in a single .txt file within the specified folder.</span>
+<span class="sd">        - The function reads the data from the .txt file, performs preprocessing steps (such as dropping unnecessary columns and converting timestamps), and calculates the average of each measure over the selected time period.</span>
+<span class="sd">        - If `interval` is provided, the data is resampled to the given interval using the mean value for each resampled interval.</span>
+<span class="sd">        - If `save_csv` is True, the imported data (or the resampled data if `interval` is provided) is saved as a CSV file in the same folder as the data file.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        df, id = read_raw_finometer_data(&#39;/path/to/folder&#39;, interval=&#39;1T&#39;, save_csv=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="n">folder_path</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>

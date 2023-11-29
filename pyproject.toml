@@ -14,9 +14,13 @@ pandas = "^2.0.1"
 
 
 
+
 [tool.poetry.group.dev.dependencies]
 sphinx = "6.2.1"
 sphinx-rtd-theme = "^1.2.1"
+certifi = "^2023.04"
+
+
 
 [build-system]
 requires = ["poetry-core"]

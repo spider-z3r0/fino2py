@@ -3,15 +3,19 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 # Required
+
 version: 2
 
-# Python settings
 python:
-  version: 3.11
   install:
+    - requirements: docs/requirements.txt
     - method: pip
       path: .
-    - requirements: requirements.txt
+      extra_requirements:
+        - docs
+    - method: pip
+      path: .
+
 
 # Build settings
 build:

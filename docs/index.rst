@@ -48,8 +48,8 @@ To install the project, follow these steps:
    :caption: Contents:
 
    citation
-   fino2py
    fino2py.example_project
+   fino2py
    fino2py.cleaning
    fino2py.ingesting
    fino2py.reshaping

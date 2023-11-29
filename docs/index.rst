@@ -49,10 +49,12 @@ To install the project, follow these steps:
 
    citation
    fino2py
+   fino2py.example_project
    fino2py.cleaning
    fino2py.ingesting
    fino2py.reshaping
    fino2py.times
+   modules
 
    
 

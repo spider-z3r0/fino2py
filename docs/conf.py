@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 
 project = 'fino2py'
-copyright = "2023, Kev O'Malley"
+copyright = "2024, Kev O'Malley"
 author = "Kev O'Malley"
 release = '0.1.0'
 
@@ -36,3 +36,12 @@ html_static_path = ['_static']
 
 
 autodoc_mock_imports = ['pandas',]
+
+# Specify the source directory for Python files
+autodoc_default_options = {
+    'members': True,
+    'member-order': 'bysource',
+    'special-members': '__init__, __doc__',
+    'undoc-members': True,
+    'private-members': True,
+}

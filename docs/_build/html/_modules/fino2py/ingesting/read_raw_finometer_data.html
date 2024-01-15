@@ -42,11 +42,13 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing This Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.example_project.html">Example Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.html">fino2py package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.cleaning.html">fino2py.cleaning package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.ingesting.html">fino2py.ingesting package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.reshaping.html">fino2py.reshaping package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.times.html">fino2py.times package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fino2py</a></li>
 </ul>
 
         </div>
@@ -81,7 +83,7 @@
 
 <span class="kn">from</span> <span class="nn">..dependencies</span> <span class="kn">import</span> <span class="n">pl</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">dt</span>
 
-<div class="viewcode-block" id="read_raw_finometer_data"><a class="viewcode-back" href="../../../fino2py.ingesting.html#fino2py.read_raw_finometer_data">[docs]</a><span class="k">def</span> <span class="nf">read_raw_finometer_data</span><span class="p">(</span><span class="n">folder_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">Path</span><span class="p">],</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_csv</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="read_raw_finometer_data"><a class="viewcode-back" href="../../../source/fino2py.ingesting.html#fino2py.read_raw_finometer_data">[docs]</a><span class="k">def</span> <span class="nf">read_raw_finometer_data</span><span class="p">(</span><span class="n">folder_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">Path</span><span class="p">],</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_csv</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Imports the raw finometer data and calculates the average of each measure over the selected time period.</span>
 
 <span class="sd">    This function imports the raw finometer data from the specified folder path or file and calculates the average of each measure over a selected time period. The default time period is 1 minute, but it can be changed by setting the `interval` parameter to a different value. This function is a convenient way to preprocess the data before further analysis.</span>
@@ -173,7 +175,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+    <p>&#169; Copyright 2024, Kev O&#39;Malley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

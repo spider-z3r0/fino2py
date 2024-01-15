@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Example Project" href="fino2py.example_project.html" /> 
+    <link rel="prev" title="fino2py.times package" href="fino2py.times.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,8 +44,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing This Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.example_project.html">Example Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.reshaping.html">fino2py.reshaping package</a></li>
@@ -94,8 +94,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_nova_demographics">fino2py.ingesting.read_nova_demographics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_demographics">fino2py.ingesting.read_raw_demographics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_finometer_data">fino2py.ingesting.read_raw_finometer_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_nova_data">fino2py.ingesting.read_raw_nova_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting">Module contents</a></li>
 </ul>
 </li>
@@ -105,6 +107,7 @@
 <li class="toctree-l4"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.generate_protocol_averages">fino2py.reshaping.generate_protocol_averages module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.minute_by_minute">fino2py.reshaping.minute_by_minute module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.minute_by_minute_from_folder">fino2py.reshaping.minute_by_minute_from_folder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.nova_minute_by_minute">fino2py.reshaping.nova_minute_by_minute module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping">Module contents</a></li>
 </ul>
 </li>
@@ -122,17 +125,20 @@
 <li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_fino_time"><code class="docutils literal notranslate"><span class="pre">convert_fino_time()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_partial_time"><code class="docutils literal notranslate"><span class="pre">convert_partial_time()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_timestamp_time"><code class="docutils literal notranslate"><span class="pre">convert_timestamp_time()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.create_chunk"><code class="docutils literal notranslate"><span class="pre">create_chunk()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_raw_finometer_data"><code class="docutils literal notranslate"><span class="pre">read_raw_finometer_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_raw_demographics"><code class="docutils literal notranslate"><span class="pre">read_raw_demographics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_raw_nova_data"><code class="docutils literal notranslate"><span class="pre">read_raw_nova_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_nova_demographics"><code class="docutils literal notranslate"><span class="pre">read_nova_demographics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.generate_protocol_averages"><code class="docutils literal notranslate"><span class="pre">generate_protocol_averages()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.import_protocol_times"><code class="docutils literal notranslate"><span class="pre">import_protocol_times()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.create_chunk"><code class="docutils literal notranslate"><span class="pre">create_chunk()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.merge_split_data"><code class="docutils literal notranslate"><span class="pre">merge_split_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.minute_by_minute"><code class="docutils literal notranslate"><span class="pre">minute_by_minute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.nova_minute_by_minute"><code class="docutils literal notranslate"><span class="pre">nova_minute_by_minute()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.minute_by_minute_from_folder"><code class="docutils literal notranslate"><span class="pre">minute_by_minute_from_folder()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_raw_demographics"><code class="docutils literal notranslate"><span class="pre">read_raw_demographics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.read_raw_finometer_data"><code class="docutils literal notranslate"><span class="pre">read_raw_finometer_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_partial_time"><code class="docutils literal notranslate"><span class="pre">convert_partial_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_fino_time"><code class="docutils literal notranslate"><span class="pre">convert_fino_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.convert_timestamp_time"><code class="docutils literal notranslate"><span class="pre">convert_timestamp_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.html#fino2py.import_protocol_times"><code class="docutils literal notranslate"><span class="pre">import_protocol_times()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -145,13 +151,13 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fino2py.example_project.html" class="btn btn-neutral float-left" title="Example Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fino2py.times.html" class="btn btn-neutral float-left" title="fino2py.times package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+    <p>&#169; Copyright 2024, Kev O&#39;Malley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

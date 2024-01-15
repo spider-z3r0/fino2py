@@ -1,7 +1,6 @@
 fino2py package
 ===============
 
-
 Subpackages
 -----------
 

@@ -44,8 +44,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing This Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.example_project.html">Example Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.reshaping.html">fino2py.reshaping package</a></li>
@@ -112,13 +112,6 @@ The <cite>fino2py</cite> package simplifies this process by offering a set of fu
 <li class="toctree-l2"><a class="reference internal" href="citation.html#bibtex">BibTeX:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#subpackages">Subpackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.example_project.html">Example Project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.example_project.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.example_project.html#raw-data">Raw Data</a></li>
@@ -130,6 +123,13 @@ The <cite>fino2py</cite> package simplifies this process by offering a set of fu
 <li class="toctree-l2"><a class="reference internal" href="fino2py.example_project.html#indices-and-tables">Indices and Tables</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="fino2py.html">fino2py package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py.dependencies">fino2py.dependencies module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.html#module-fino2py">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.cleaning.html">fino2py.cleaning package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.cleaning.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.cleaning.html#module-fino2py.cleaning.merge_split_data">fino2py.cleaning.merge_split_data module</a></li>
@@ -138,8 +138,10 @@ The <cite>fino2py</cite> package simplifies this process by offering a set of fu
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fino2py.ingesting.html">fino2py.ingesting package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_nova_demographics">fino2py.ingesting.read_nova_demographics module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_demographics">fino2py.ingesting.read_raw_demographics module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_finometer_data">fino2py.ingesting.read_raw_finometer_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting.read_raw_nova_data">fino2py.ingesting.read_raw_nova_data module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.ingesting.html#module-fino2py.ingesting">Module contents</a></li>
 </ul>
 </li>
@@ -149,6 +151,7 @@ The <cite>fino2py</cite> package simplifies this process by offering a set of fu
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.generate_protocol_averages">fino2py.reshaping.generate_protocol_averages module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.minute_by_minute">fino2py.reshaping.minute_by_minute module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.minute_by_minute_from_folder">fino2py.reshaping.minute_by_minute_from_folder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.nova_minute_by_minute">fino2py.reshaping.nova_minute_by_minute module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping">Module contents</a></li>
 </ul>
 </li>
@@ -187,7 +190,7 @@ The <cite>fino2py</cite> package simplifies this process by offering a set of fu
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+    <p>&#169; Copyright 2024, Kev O&#39;Malley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

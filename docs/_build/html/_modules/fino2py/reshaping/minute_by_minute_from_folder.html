@@ -42,7 +42,12 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing This Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.example_project.html">Example Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fino2py.html">fino2py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.cleaning.html">fino2py.cleaning package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.ingesting.html">fino2py.ingesting package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.reshaping.html">fino2py.reshaping package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fino2py.times.html">fino2py.times package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fino2py</a></li>
 </ul>
 
@@ -97,7 +102,7 @@
 <span class="kn">from</span> <span class="nn">..ingesting.read_raw_finometer_data</span> <span class="kn">import</span> <span class="n">read_raw_finometer_data</span>
 <span class="kn">from</span> <span class="nn">.minute_by_minute</span> <span class="kn">import</span> <span class="n">minute_by_minute</span>
 
-<div class="viewcode-block" id="minute_by_minute_from_folder"><a class="viewcode-back" href="../../../fino2py.reshaping.html#fino2py.minute_by_minute_from_folder">[docs]</a><span class="k">def</span> <span class="nf">minute_by_minute_from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">save_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="minute_by_minute_from_folder"><a class="viewcode-back" href="../../../source/fino2py.reshaping.html#fino2py.minute_by_minute_from_folder">[docs]</a><span class="k">def</span> <span class="nf">minute_by_minute_from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">save_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 
 <span class="sd">    This function reads the raw finometer data from the specified folder path and &#39;reshapes&#39; the data into a minute-by-minute format. </span>
@@ -147,7 +152,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Kev O&#39;Malley.</p>
+    <p>&#169; Copyright 2024, Kev O&#39;Malley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

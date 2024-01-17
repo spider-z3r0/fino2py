@@ -54,11 +54,9 @@ def nova_concat(data_dict: Dict) -> pd.DataFrame:
 
     Example
     -------
-    data_dict = {
-        'Participant1': df1,
-        'Participant2': df2,
-        ...
-    }
+    # Import minute-by-minute data for each participant with a dictionary comprehension
+    data_dict
+
     concatenated_df = nova_concat(data_dict)
     '''
 

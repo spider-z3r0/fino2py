@@ -13,6 +13,6 @@ possible future dependencies:
 import pandas as pd
 import pathlib as pl
 from functools import reduce
-from typing import Union, Tuple, Optional, List
+from typing import Union, Tuple, Optional, List, Dict
 import datetime as dt
 import re

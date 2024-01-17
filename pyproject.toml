@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "fino2py"
-version = "0.1.0.3"
-description = "A package to help researchers and clinicians work with data produced by the Finapress Finometer and the Nova"
+version = "0.1.0.5"
+description = "A package to help researchers and clinicians work with data produced by the Finapress Finometer and Nova devices"
 authors = ["Kev O'Malley"]
 readme = "README.md"
 packages = [

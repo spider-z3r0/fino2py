@@ -1,0 +1,64 @@
+---
+author: Kev O'Malley
+date: 2024-15-01
+title: Documentation update process (poetry and sphinx)
+
+
+
+---
+
+## Documentation Update Process
+
+### Step 1: Create New Python Files
+
+1. Create the new `.py` files for your project.
+2. Ensure that the first two lines of each new `.py` file contain the following:
+   ```python
+   #!/usr/bin/env python
+   # -*- coding: utf-8 -*-
+   ```
+   These lines specify the Python interpreter and character encoding to use.
+
+### Step 2: Update `__init__.py`
+
+3. Open the top-level `__init__.py` file in your project.
+4. Import the new modules you've created.
+5. List the new modules in the `__all__` list to make them accessible when importing your package.
+   
+   Example:
+   ```python
+   # In __init__.py
+   from .new_module import some_function
+   __all__ = ["some_function"]
+   ```
+
+### Step 3: Generate Sphinx Documentation
+
+6. Run the following command from within your Poetry environment to generate Sphinx documentation:
+   ```bash
+   poetry run sphinx-apidoc -o docs fino2py -f
+   ```
+   This command generates `.rst` files for your package's modules in the `docs` directory.
+
+### Step 4: Build HTML Documentation
+
+7. Change your current working directory to the `docs` folder:
+   ```bash
+   cd docs
+   ```
+8. Build the HTML documentation using the following command:
+   ```bash
+   poetry run make html
+   ```
+   This command processes the `.rst` files and generates HTML documentation in the `_build` directory.
+
+### Step 5: Git Commit and Push
+
+9. Commit the changes to your Git repository, including the updated Python files and the newly generated documentation files.
+10. Push the changes to your GitHub repository.
+
+### Step 6: Update ReadTheDocs
+
+11. After pushing the changes to GitHub, trigger a new build on ReadTheDocs to update your documentation there.
+
+By following these steps, you can ensure that your project's documentation stays up-to-date with the new modules you add. This process helps maintain comprehensive and accessible documentation for your project.

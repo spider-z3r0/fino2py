@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.merge_split_data"><code class="docutils literal notranslate"><span class="pre">merge_split_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.minute_by_minute"><code class="docutils literal notranslate"><span class="pre">minute_by_minute()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.nova_minute_by_minute"><code class="docutils literal notranslate"><span class="pre">nova_minute_by_minute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fino2py.nova_concat"><code class="docutils literal notranslate"><span class="pre">nova_concat()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.minute_by_minute_from_folder"><code class="docutils literal notranslate"><span class="pre">minute_by_minute_from_folder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.convert_partial_time"><code class="docutils literal notranslate"><span class="pre">convert_partial_time()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fino2py.convert_fino_time"><code class="docutils literal notranslate"><span class="pre">convert_fino_time()</span></code></a></li>
@@ -100,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.merge_split_data"><code class="docutils literal notranslate"><span class="pre">merge_split_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.minute_by_minute"><code class="docutils literal notranslate"><span class="pre">minute_by_minute()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.nova_minute_by_minute"><code class="docutils literal notranslate"><span class="pre">nova_minute_by_minute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fino2py.nova_concat"><code class="docutils literal notranslate"><span class="pre">nova_concat()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.minute_by_minute_from_folder"><code class="docutils literal notranslate"><span class="pre">minute_by_minute_from_folder()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.convert_partial_time"><code class="docutils literal notranslate"><span class="pre">convert_partial_time()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fino2py.convert_fino_time"><code class="docutils literal notranslate"><span class="pre">convert_fino_time()</span></code></a></li>
@@ -190,6 +192,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.minute_by_minute_from_folder">fino2py.reshaping.minute_by_minute_from_folder module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="fino2py.reshaping.html#fino2py.reshaping.minute_by_minute_from_folder.minute_by_minute_from_folder"><code class="docutils literal notranslate"><span class="pre">minute_by_minute_from_folder()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.nova_concat">fino2py.reshaping.nova_concat module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fino2py.reshaping.html#fino2py.reshaping.nova_concat.nova_concat"><code class="docutils literal notranslate"><span class="pre">nova_concat()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="fino2py.reshaping.html#module-fino2py.reshaping.nova_minute_by_minute">fino2py.reshaping.nova_minute_by_minute module</a><ul>
@@ -496,6 +502,33 @@ Use this parameter to skip lines in the part 2 file, for example, to account for
 <dd class="field-odd"><p>pandas DataFrame</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fino2py.nova_concat">
+<span class="sig-prename descclassname"><span class="pre">fino2py.</span></span><span class="sig-name descname"><span class="pre">nova_concat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="reference internal" href="_modules/fino2py/reshaping/nova_concat.html#nova_concat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fino2py.nova_concat" title="Permalink to this definition"></a></dt>
+<dd><p>Concatenate the minute-by-minute data for each participant into a single DataFrame.</p>
+<p>This function takes a dictionary of minute-by-minute dataframes (<cite>data_dict</cite>) and concatenates them into a single DataFrame. The dictionary should be created using the <cite>read_raw_nova_data</cite> function. The Participant ID column is added at the beginning of the DataFrame to allow for sample-level analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_dict</strong> (<em>Dict</em>) – A dictionary containing Participant ID as keys and minute-by-minute dataframes as values.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A concatenated DataFrame containing minute-by-minute data for all participants.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>data_dict = {</dt><dd><p>‘Participant1’: df1,
+‘Participant2’: df2,
+…</p>
+</dd>
+</dl>
+<p>}
+concatenated_df = nova_concat(data_dict)</p>
 </dd></dl>
 
 <dl class="py function">

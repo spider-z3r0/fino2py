@@ -36,6 +36,14 @@ fino2py.reshaping.minute\_by\_minute\_from\_folder module
    :undoc-members:
    :show-inheritance:
 
+fino2py.reshaping.nova\_concat module
+-------------------------------------
+
+.. automodule:: fino2py.reshaping.nova_concat
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 fino2py.reshaping.nova\_minute\_by\_minute module
 -------------------------------------------------
 

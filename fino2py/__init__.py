@@ -19,6 +19,7 @@ from .reshaping.minute_by_minute_from_folder import minute_by_minute_from_folder
 from .reshaping.create_chunk import create_chunk
 from .reshaping.generate_protocol_averages import generate_protocol_averages
 from .reshaping.nova_minute_by_minute import nova_minute_by_minute
+from .reshaping.nova_concat import nova_concat
 
 # The times modules
 from .times.convert_partial_time import convert_partial_time
@@ -37,6 +38,7 @@ __all__ = [
     'merge_split_data',
     'minute_by_minute',
     'nova_minute_by_minute',
+    'nova_concat',
     'minute_by_minute_from_folder',
     'convert_partial_time',
     'convert_fino_time',
